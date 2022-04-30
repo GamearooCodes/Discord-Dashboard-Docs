@@ -4,7 +4,7 @@ Discord-Dashboard is a module that allows you to create a simple Dashboard for t
 
 # Full Sample
 
-Full code example can be found in this blog post: [https://assistantscenter.com/discord-dashboard-guide-part-2-basic-project-example/](https://assistants.ga/discord-dashboard-guide-part-2-basic-project-example/)
+Full code example can be found in this blog post: [https://assistantscenter.com/discord-dashboard-guide-part-2-basic-project-example/](https://assistantscenter.com/discord-dashboard-guide-part-2-basic-project-example/)
 
 You can also generate one using <a href="#/?id=generate-sample-dashboard">this code</a>.
 
@@ -40,7 +40,7 @@ let DBD = require('discord-dashboard');
 
 ## 2. Use License
 
-To use the Dashboard, you must have a license generated for the project. You will generate one through your Assistants Center account on the [https://licenses.assistants.ga/](https://licenses.assistants.ga/) website. There is an OpenSource license available for FREE.
+To use the Dashboard, you must have a license generated for the project. You will generate one through your Assistants Center account on the [https://licenses.assistantscenter.com](https://licenses.assistantscenter.com) website. There is an OpenSource license available for FREE.
 
 
 ```js
@@ -90,8 +90,6 @@ DBD.initDashboard({fileName, domain, port, token, clientSecret, clientId, licens
 | clientSecret | String | Your Client Secret.                                                                        |
 | clientId    | String | Your Client ID.                                                                            |
 | licenseId   | String | Your project license from Assistants Center: Licenses.                                     |
-
-How to get clientSecret and clientId? Read our blog post: [https://assistants.ga/how-do-i-get-a-discord-bot-token-client-id-client-secret-and-redirect-uri/](https://assistants.ga/how-do-i-get-a-discord-bot-token-client-id-client-secret-and-redirect-uri/)
 
 
 ### Create Form Type
@@ -349,7 +347,7 @@ interface EmbedBuilderField {
             description: "There was a boar, everyone liked a boar. One day the boar ate my dinner and escaped through the chimney. I haven't seen a boar since then.",
             author: {
                 name: "Assistants Center",
-                url: "https://assistants.ga",
+                url: "https://assistantscenter.com",
                 icon_url: "https://media.discordapp.net/attachments/911644960590270484/934513385402413076/ac_fixed.png"
             },
             image: {
@@ -738,7 +736,7 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 
 ## Dashboard Class
 
-?> **Dashboard class** works correctly only if you have previously used the async function for `DBD.useLicense('licenseId')` and you updated the **Dashboard class** with `DBD.UpdatedClasses()`. [Check Install step to how to do this properly.](https://assistants.ga/dbd-docs/#/?id=install)
+?> **Dashboard class** works correctly only if you have previously used the async function for `DBD.useLicense('licenseId')` and you updated the **Dashboard class** with `DBD.UpdatedClasses()`. [Check Install step to how to do this properly.](https://dbd-docs.assistantscenter.com/#/?id=install)
 
 
 ### Config
@@ -771,7 +769,6 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 | id     | String | Discord Bot Client ID.     |
 | secret | String | Discord Bot Client Secret. |
 
-[How to get them?](https://assistants.ga/how-do-i-get-a-discord-bot-token-client-id-client-secret-and-redirect-uri/)
 
 #### Redirect URI (required)
 
@@ -785,7 +782,6 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 |-------------|--------|------------------------------------------------------------------------------------------------------|
 | redirectUri | String | Discord.js Bot OAuth2 defined Redirect Uri. For discord-dashboard it's `domain.com/discord/callback` |
 
-[How can I set OAuth2 redirect URI?](https://assistants.ga/how-do-i-get-a-discord-bot-token-client-id-client-secret-and-redirect-uri/)
 
 #### Domain (required)
 
@@ -1089,7 +1085,7 @@ Use this mode if you don't want users to be able to access the Dashboard. A page
 
 You can change the color of the technical break page. All available options are shown in the example below.
 
-![Image](https://cdn.assistants.ga/kvzmqybi)
+![Image](https://cdn.assistantscenter.com/kvzmqybi)
 
 ```js
 ...
@@ -1200,7 +1196,7 @@ Themes currently available and created by the Dashboard Community will always be
 
 - [NPM](https://www.npmjs.com/package/dbd-capriham-theme), [GitHub](https://github.com/breftejk/dbd-capriham-theme)
 
-![](https://cdn.assistants.ga/kqwivftx)
+![](https://cdn.assistantscenter.com/kqwivftx)
 
 
 ### Dark Dashboard
