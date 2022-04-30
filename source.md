@@ -16,6 +16,8 @@ Join our Discord Support Server
 
 # Demo
 
+Demos are currenly DOWN due to some updates.
+
 **Capriham Theme:** https://caprihamdbd.assistantscenter.com/
 
 **Dark Dashboard Theme:** https://darkdbd.assistantscenter.com/
@@ -1204,6 +1206,7 @@ Themes currently available and created by the Dashboard Community will always be
 **Resources:**
 
 - [NPM](https://www.npmjs.com/package/dbd-dark-dashboard), [GitHub](https://github.com/PlainDevelopment/dbd-dark-dashboard)
+- [DOCS](https://dbd-docs.assistantscenter.com/dark-theme)
 
 ![](https://camo.githubusercontent.com/a5768145e7ca3f74d4673fb99937251734f1ed4b9a85f15e1a3057826cc86cd6/68747470733a2f2f692e696d6775722e636f6d2f3333736b3947692e706e67)
 
