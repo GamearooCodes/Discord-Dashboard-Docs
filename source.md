@@ -823,6 +823,23 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 
 Discord-Dashboard themes are listed in the <a href="#/?id=themes">Themes</a> section.
 
+
+##### Theme-side Landing Page
+
+Set up your own landing page different from the Dashboard! Please note, this must be placed in Theme config, not Discord-Dashboard config!
+
+```js
+theme: <ThemeModule({
+    ...,
+    landingPage: {
+      enabled: true,
+      getLandingPage: async(req,res) => {
+          return '<html><h1>hello</h1></html>'
+      }
+    }
+})>
+```
+
 #### Settings (required)
 
 Please go to the <a href="#/?id=dashboard-config-settings">Dashboard Config Settings</a> section.
