@@ -408,7 +408,7 @@ themeOptions: {
 }
 ...
 ...
-//This must be defined in the first switch option: 
+//This must be defined in the last switch option: 
 themeOptions: {
     minimalbutton: {
         last: true,
