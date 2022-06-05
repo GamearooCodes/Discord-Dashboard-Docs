@@ -1323,11 +1323,11 @@ Dashboard settings are simply a complex list of options that the user will be ab
 - **Objects**:
 
 
-| Object  | Type                                  |                                                                                          |
-|---------|---------------------------------------|------------------------------------------------------------------------------------------|
-| guild   | Object: `{id: DiscordGuildID}`        | GUILD ID where the settings were updated (String).                                       |
-| user    | Object: `{id: DiscordUserID}`         | User ID who has updated settings on GUILD (String).                                      |
-| newData | Depends on the type of the Form Type. | This is something that `user` has set as a wanted value for a new option on the `guild`. |
+| Object  | Type                                                         |                                                                                          |
+|---------|--------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| guild   | Object: `{id: DiscordGuildID, object: <GuildObject>}`        | GUILD ID where the settings were updated (String).                                       |
+| user    | Object: `{id: DiscordUserID, object: <GuildMemberObject>}`   | User ID who has updated settings on GUILD (String).                                      |
+| newData | Depends on the type of the Form Type.                        | This is something that `user` has set as a wanted value for a new option on the `guild`. |
 
 ### Errors Handling
 
