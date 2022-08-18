@@ -1,3 +1,10 @@
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-3673520795587574"
+data-ad-slot="3839010729"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+
 # About
 
 Discord-Dashboard is a module that allows you to create a simple Dashboard for the Discord Bot using Node.js. The module has the entire API system integrated and only requires the user to configure the necessary options. He doesn't have to write the whole API from scratch. We also allow you to choose a Theme that you can change at any time when using the module without worrying about changing the system.
@@ -21,6 +28,13 @@ Demos are currenly DOWN due to some updates.
 **Capriham Theme:** https://caprihamdbd.assistantscenter.com/
 
 **Dark Dashboard Theme:** https://darkdbd.assistantscenter.com/
+
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-3673520795587574"
+data-ad-slot="3839010729"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
 
 # Install
 
@@ -960,7 +974,7 @@ MODERATE_MEMBERS
 
 Each permission is described on [Discord OAuth2 Documentation](https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags).
 
-**Default value**: 
+**Default value**:
 
 ```js
 requiredPermissions: [ DBD.DISCORD_FLAGS.Permissions.MANAGE_GUILD ],
@@ -976,9 +990,9 @@ The Dashboard allows you to add RateLimits in 4 places, and doing so is triviall
 ```js
 rateLimits: {
     manage: RateLimitSettingsObject,
-    guildPage: RateLimitSettingsObject,
-    settingsUpdatePostAPI: RateLimitSettingsObject,
-    discordOAuth2: RateLimitSettingsObject
+        guildPage: RateLimitSettingsObject,
+        settingsUpdatePostAPI: RateLimitSettingsObject,
+        discordOAuth2: RateLimitSettingsObject
 }
 ```
 
@@ -987,9 +1001,9 @@ rateLimits: {
 ```js
 {
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
-    message: 'Sorry, you are ratelimited!', // Message returned if user should be rate limited, could be also JSON/HTML
-    store: null, // <Rate Limiter Store> - if null, new MemoryStore()
+        max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+        message: 'Sorry, you are ratelimited!', // Message returned if user should be rate limited, could be also JSON/HTML
+        store: null, // <Rate Limiter Store> - if null, new MemoryStore()
     // supported stores: https://www.npmjs.com/package/express-rate-limit#store
 }
 ```
@@ -1000,7 +1014,7 @@ Automatically accept the privacy policy for the Dashboard without having to give
 
 ```js
 ...
-    acceptPrivacyPolicy: Boolean=false,
+acceptPrivacyPolicy: Boolean=false,
 ...
 ```
 
@@ -1010,7 +1024,7 @@ Do not create and don't listen an express http/-s server for Dashboard.
 
 ```js
 ...
-    noCreateServer: Boolean=false,
+noCreateServer: Boolean=false,
 ...
 ```
 
@@ -1020,11 +1034,11 @@ If you want to use the https protocol, you must provide us with a certificate an
 
 ```js
 ...
-    SSL: {
-        enabled: Boolean=false,
+SSL: {
+    enabled: Boolean=false,
         key: String='',
         cert: String=''
-    },
+},
 ...
 ```
 
@@ -1034,7 +1048,7 @@ If you want to restrict console logs through Assistants Center, you can do so us
 
 ```js
 ...
-    minimizedConsoleLogs: Boolean=false,
+minimizedConsoleLogs: Boolean=false,
 ...
 ```
 
@@ -1044,13 +1058,13 @@ Specify `/invite` endpoint behavior.
 
 ```js
 ...
-    invite: {
-        clientId: String=this.bot.user.id,
+invite: {
+    clientId: String=this.bot.user.id,
         scopes: Array=["bot"],
         permissions: String='0',
         redirectUri: String='',
         otherParams: String=''
-    },
+},
 ...
 ```
 
@@ -1060,10 +1074,10 @@ Create an endpoint containing a link with an invitation to your Discord Support 
 
 ```js
 ...
-    supportServer: {
-        slash: String='/support-server',
+supportServer: {
+    slash: String='/support-server',
         inviteUrl: String=''
-    },
+},
 ...
 ```
 
@@ -1073,10 +1087,10 @@ Automatically add a user to your Discord Server where the bot is when they log i
 
 ```js
 ...
-    guildAfterAuthorization: {
-        use: Boolean=false,
+guildAfterAuthorization: {
+    use: Boolean=false,
         guildId: String
-    },
+},
 ...
 ```
 
@@ -1158,11 +1172,11 @@ You can change the color of the technical break page. All available options are 
 
 ```js
 ...
-    underMaintenanceAccessKey: 'totalsecretkey',
+underMaintenanceAccessKey: 'totalsecretkey',
     underMaintenanceAccessPage: '/total-secret-get-access',
     useUnderMaintenance: true,
     underMaintenance: {
-        title: 'Under Maintenance',
+    title: 'Under Maintenance',
         contentTitle: 'This page is under maintenance',
         texts: [
         '<br>',
@@ -1190,7 +1204,7 @@ To set up your own page, you must set underMaintenanceCustomHtml instead of unde
 
 ```js
 ...
-    underMaintenanceAccessKey: 'totalsecretkey',
+underMaintenanceAccessKey: 'totalsecretkey',
     underMaintenanceAccessPage: '/total-secret-get-access',
     useUnderMaintenance: true,
     underMaintenanceCustomHtml: `
@@ -1213,7 +1227,7 @@ Define an Array of Discord User IDs of people who are to be considered project a
 
 ```js
 ...
-    ownerIDs: ['123', '456'],
+ownerIDs: ['123', '456'],
 ...
 ```
 
@@ -1221,8 +1235,8 @@ Define an Array of Discord User IDs of people who are to be considered project a
 
 ```js
 ...
-    sessionStore: <ExpressSessionStoreModule>,
-...
+sessionStore: <ExpressSessionStoreModule>,
+    ...
 ```
 
 Please note that `discord-dashboard@<=2.3.19` uses `sessionSaveSession` instead of `sessionStore`.
@@ -1235,7 +1249,7 @@ Please note that `discord-dashboard@<=2.3.19` uses `sessionSaveSession` instead 
 module.exports = {
     app: ({app,config,themeConfig}) => {
         app.get('/moduleexample', (req,res)=>{
-           res.send('ModuleExample: Hello World!');
+            res.send('ModuleExample: Hello World!');
         });
     },
     server: ({io,server,config,themeConfig}) => {
@@ -1255,8 +1269,8 @@ Themes currently available and created by the Dashboard Community will always be
 
 ```js
 ...
-    theme: <ThemeModule>,
-...
+theme: <ThemeModule>,
+    ...
 ```
 
 ### Capriham Theme
@@ -1293,9 +1307,9 @@ const SocketIO = Dashboard.io;
 
 ```js
     const test = SocketIO.of('/test');
-    test.on('connection', () => {
-        console.log('ModuleExample socket.io connected.');
-    });
+test.on('connection', () => {
+    console.log('ModuleExample socket.io connected.');
+});
 ```
 
 Web Socket is now accesible from the `ws://domain.com/test` if the SSL is not used with the Dashboard or `wss://domain.com/test` if it is.
@@ -1306,10 +1320,10 @@ Dashboard settings are simply a complex list of options that the user will be ab
 
 ```js
 ...
-    settings: [
-        categoryObject,
-        categoryObject,
-    ],
+settings: [
+    categoryObject,
+    categoryObject,
+],
 ...
 ```
 
@@ -1318,9 +1332,9 @@ Dashboard settings are simply a complex list of options that the user will be ab
 ```js
 {
     categoryId: '',
-    categoryName: "",
-    categoryDescription: "",
-    categoryOptionsList: [
+        categoryName: "",
+        categoryDescription: "",
+        categoryOptionsList: [
         categoryOptionObject,
         categoryOptionObject,
     ]
@@ -1341,22 +1355,22 @@ Dashboard settings are simply a complex list of options that the user will be ab
 {
     /*Required options*/
     optionId: '',
-    optionName: "",
-    optionDescription: "",
-    optionType: <DBDFormType>,
-    getActualSet: async ({guild,user}) => {
-        return <DBDFormTypeValueType>;
-    },
-    setNew: async ({guild,user,newData}) => {
-        return <DBDFormTypeValueType>;
-    },
-    /*Optional options*/
-    allowedCheck: async ({guild,user}) => {
-        if(guild.id == "123456789876")return {allowed: false, errorMessage: 'You cannot use this option - guild is blacklisted for it.'};
-        if(user.id == "123456789876")return {allowed: false, errorMessage: 'You cannot use this option - user is blacklisted for.'};
-        return {allowed: true, errorMessage: null};
-    }
-}
+        optionName: "",
+        optionDescription: "",
+        optionType: <DBDFormType>,
+        getActualSet: async ({guild,user}) => {
+            return <DBDFormTypeValueType>;
+            },
+            setNew: async ({guild,user,newData}) => {
+            return <DBDFormTypeValueType>;
+            },
+            /*Optional options*/
+            allowedCheck: async ({guild,user}) => {
+            if(guild.id == "123456789876")return {allowed: false, errorMessage: 'You cannot use this option - guild is blacklisted for it.'};
+            if(user.id == "123456789876")return {allowed: false, errorMessage: 'You cannot use this option - user is blacklisted for.'};
+            return {allowed: true, errorMessage: null};
+        }
+            }
 ```
 
 - **Options:**
@@ -1389,9 +1403,9 @@ If the user tries to change the settings despite not having permission, the serv
 
 ```js
 ...
-    allowedCheck: async ({guild,user}) => {
-        return {allowed: Bollean, errorMessage: String | null};
-    },
+allowedCheck: async ({guild,user}) => {
+    return {allowed: Bollean, errorMessage: String | null};
+},
 ...
 ```
 
@@ -1401,9 +1415,9 @@ If you want to return an error when setting a new option value, return the Objec
 
 ```js
 ...
-    setNew: async ({guild,user,newData}) => {
-        return {error: "Error text."};
-    }
+setNew: async ({guild,user,newData}) => {
+    return {error: "Error text."};
+}
 ...
 ```
 
@@ -1411,8 +1425,15 @@ If you don't want to send any error, return nothing or return an empty Object.
 
 ```js
 ...
-    setNew: async ({guild,user,newData}) => {
-        return; //or return {};
-    }
+setNew: async ({guild,user,newData}) => {
+    return; //or return {};
+}
 ...
 ```
+
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-3673520795587574"
+data-ad-slot="7445129533"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>

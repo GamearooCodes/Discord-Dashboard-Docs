@@ -1,3 +1,10 @@
+<ins class="adsbygoogle ad1"
+style="display:block"
+data-ad-client="ca-pub-3673520795587574"
+data-ad-slot="8542588788"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+
 # About
 
 DBD Dark Dashboard is a theme to addon to the [Discord Dashboard](https://www.npmjs.com/package/discord-dashboard) module and brings a simple dashboard to life.
@@ -35,7 +42,15 @@ Must be defined inside of DashboardConfig which you can find [here](https://assi
 theme: DarkDashboard({ThemeConfig})
 ```
 
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-3673520795587574"
+data-ad-slot="5724853750"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+
 # Documentation
+
 ## ThemeConfig
    
 ### Full ThemeConfig
@@ -494,3 +509,10 @@ Example
 - [NPM](https://www.npmjs.com/package/dbd-dark-dashboard), [GitHub](https://github.com/Assistants-Center/dbd-dark-dashboard)
 
 ![](https://camo.githubusercontent.com/a5768145e7ca3f74d4673fb99937251734f1ed4b9a85f15e1a3057826cc86cd6/68747470733a2f2f692e696d6775722e636f6d2f3333736b3947692e706e67)
+
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-3673520795587574"
+data-ad-slot="9907641346"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
