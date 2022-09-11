@@ -446,7 +446,7 @@ Array of Strings (Channels IDs) | or an empty Array.
 #### Roles Select
 
 ```js
-DBD.formTypes.rolesSelect(disabled),
+DBD.formTypes.rolesSelect(disabled, includeBots),
 ```
 
 | Argument    | Type    |                                                                  |
@@ -467,7 +467,7 @@ String, role ID | or null.
 #### Roles Multi Select
 
 ```js
-DBD.formTypes.rolesMultiSelect(disabled, required),
+DBD.formTypes.rolesMultiSelect(disabled, includeBots ,  required),
 ```
 
 | Argument    | Type    |                                                                           |
