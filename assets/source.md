@@ -51,16 +51,15 @@ yarn add discord-dashboard
 ## 1. Define Module
 
 ```js
-let DBD = require('discord-dashboard');
+let DBD = require("discord-dashboard");
 ```
 
 ## 2. Use License
 
 To use the Dashboard, you must have a license generated for the project. You will generate one through your Assistants Center account on the [https://licenses.assistantscenter.com](https://licenses.assistantscenter.com) website. There is an OpenSource license available for FREE.
 
-
 ```js
-await DBD.useLicense('licenseId');
+await DBD.useLicense("licenseId");
 ```
 
 ## 3. Update Dashboard Class
@@ -76,7 +75,7 @@ DBD.Dashboard = DBD.UpdatedClass();
 Now, to create a working Dashboard - you should create a Dashboard class. This is extremely simple.
 
 ```js
-const Dashboard = new DBD.Dashboard({DashboardConfig});
+const Dashboard = new DBD.Dashboard({ DashboardConfig });
 ```
 
 ## 5. Init Dashboard
@@ -91,51 +90,44 @@ Dashboard.init();
 
 ### Generate Sample Dashboard
 
-This method allows you to create a sample, fully functioning Dashboard for the Discord Bot with *discord-dashboard*.
+This method allows you to create a sample, fully functioning Dashboard for the Discord Bot with _discord-dashboard_.
 
 ```js
-DBD.initDashboard({fileName, domain, port, token, clientSecret, clientId, licenseId});
+DBD.initDashboard({
+	fileName,
+	domain,
+	port,
+	token,
+	clientSecret,
+	clientId,
+	licenseId,
+});
 ```
 
-| Argument    | Type   |                                                                                            |
-|-------------|--------|--------------------------------------------------------------------------------------------|
-| fileName    | String | It's the file Name to which example Dashboard is saved (pass it without the `.js` suffix). |
-| domain      | String | Your project domain. If hosted on localhost, `http://localhost/`.                          |
-| port        | Number | Port on which the Dashboard will be listening.                                             |
-| token       | String | Your Bot Token.                                                                            |
+| Argument     | Type   |                                                                                            |
+| ------------ | ------ | ------------------------------------------------------------------------------------------ |
+| fileName     | String | It's the file Name to which example Dashboard is saved (pass it without the `.js` suffix). |
+| domain       | String | Your project domain. If hosted on localhost, `http://localhost/`.                          |
+| port         | Number | Port on which the Dashboard will be listening.                                             |
+| token        | String | Your Bot Token.                                                                            |
 | clientSecret | String | Your Client Secret.                                                                        |
-| clientId    | String | Your Client ID.                                                                            |
-| licenseId   | String | Your project license from Assistants Center: Licenses.                                     |
-
+| clientId     | String | Your Client ID.                                                                            |
+| licenseId    | String | Your project license from Assistants Center: Licenses.                                     |
 
 ### Create Form Type
 
 Fages Types is something you will need in the settings for the Dashboard class. This is the method that defines what type of data will be presented.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### Select
 
 ```js
-DBD.formTypes.select(list, disabled)
+DBD.formTypes.select(list, disabled);
 ```
 
-| Argument | Type      |                                                                                                |
-|----------|-----------|------------------------------------------------------------------------------------------------|
-| list     | Object    | Array presented as follows: `{ displayName: valueReturned, displayName2: valueReturned2 }` |
-| disabled | Boolean   | Boolean check for if the select should be disabled or not.                                     |
+| Argument | Type    |                                                                                            |
+| -------- | ------- | ------------------------------------------------------------------------------------------ |
+| list     | Object  | Array presented as follows: `{ displayName: valueReturned, displayName2: valueReturned2 }` |
+| disabled | Boolean | Boolean check for if the select should be disabled or not.                                 |
 
 ##### Data required for `getActualSet` function
 
@@ -145,21 +137,7 @@ String, `valueReturned` value for option actual set.
 
 String, `valueReturned` value for option selected.
 
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Multiple Select
 
@@ -167,11 +145,11 @@ String, `valueReturned` value for option selected.
 DBD.formTypes.multiSelect(list, disabled, required),
 ```
 
-| Argument | Type      |                                                                                             |
-|----------|-----------|---------------------------------------------------------------------------------------------|
-| list     | Object    | Array presented as follows: `{ displayName: valueReturned, displayName2: valueReturned2 }`  |
-| disabled | Boolean   | Boolean check for if the select should be disabled or not.                                  |
-| required | Boolean   | Boolean check for if the select should be required or not.                                  |
+| Argument | Type    |                                                                                            |
+| -------- | ------- | ------------------------------------------------------------------------------------------ |
+| list     | Object  | Array presented as follows: `{ displayName: valueReturned, displayName2: valueReturned2 }` |
+| disabled | Boolean | Boolean check for if the select should be disabled or not.                                 |
+| required | Boolean | Boolean check for if the select should be required or not.                                 |
 
 ##### Data required for `getActualSet` function
 
@@ -183,20 +161,7 @@ Array, list of `valueReturned` to be selected.
 
 Array, list of selected `valueReturned` values | or an empty Array.
 
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Input
 
@@ -204,13 +169,13 @@ Array, list of selected `valueReturned` values | or an empty Array.
 DBD.formTypes.input(placeholder, min, max, disabled, required),
 ```
 
-| Argument    | Type     |                                                           |
-|-------------|----------|-----------------------------------------------------------|
-| placeholder | String   | Input placeholder.                                        |
-| min         | Number   | Minimum length.                                           |
-| max         | Number   | Maximum length.                                           |
-| disabled    | Boolean  | Boolean check for if the input should be disabled or not. |
-| required    | Boolean  | Boolean check for if the input should be required or not. |
+| Argument    | Type    |                                                           |
+| ----------- | ------- | --------------------------------------------------------- |
+| placeholder | String  | Input placeholder.                                        |
+| min         | Number  | Minimum length.                                           |
+| max         | Number  | Maximum length.                                           |
+| disabled    | Boolean | Boolean check for if the input should be disabled or not. |
+| required    | Boolean | Boolean check for if the input should be required or not. |
 
 ##### Data required for `getActualSet` function
 
@@ -220,24 +185,7 @@ String, value to be displayed.
 
 String, value set | or null.
 
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Textarea
 
@@ -245,13 +193,13 @@ String, value set | or null.
 DBD.formTypes.textarea(placeholder, min, max, disabled, required),
 ```
 
-| Argument    | Type     |                                                              |
-|-------------|----------|--------------------------------------------------------------|
-| placeholder | String   | Textarea placeholder.                                        |
-| min         | Number   | Minimum length.                                              |
-| max         | Number   | Maximum length.                                              |
-| disabled    | Boolean  | Boolean check for if the textarea should be disabled or not. |
-| required    | Boolean  | Boolean check for if the textarea should be required or not. |
+| Argument    | Type    |                                                              |
+| ----------- | ------- | ------------------------------------------------------------ |
+| placeholder | String  | Textarea placeholder.                                        |
+| min         | Number  | Minimum length.                                              |
+| max         | Number  | Maximum length.                                              |
+| disabled    | Boolean | Boolean check for if the textarea should be disabled or not. |
+| required    | Boolean | Boolean check for if the textarea should be required or not. |
 
 ##### Data required for `getActualSet` function
 
@@ -261,24 +209,7 @@ String, value to be displayed.
 
 String, value set | or null.
 
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Color Select
 
@@ -287,7 +218,7 @@ DBD.formTypes.colorSelect(defaultState, disabled),
 ```
 
 | Argument     | Type    |                                                                  |
-|--------------|---------|------------------------------------------------------------------|
+| ------------ | ------- | ---------------------------------------------------------------- |
 | defaultState | String  | Default state HEX color.                                         |
 | disabled     | Boolean | Boolean check for if the color select should be disabled or not. |
 
@@ -299,55 +230,52 @@ String, actual set HEX color.
 
 String, new HEX color.
 
-
 #### Embed Builder
 
 ```js
 DBD.formTypes.embedBuilder(defaultSettings),
 ```
 
-| Argument        | Type   |                                                                                         |
-|-----------------|--------|-----------------------------------------------------------------------------------------|
+| Argument        | Type   |                                                                                 |
+| --------------- | ------ | ------------------------------------------------------------------------------- |
 | defaultSettings | Object | { username: string, avatarURL: string, defaultJson: {EMBED_BUILDER_Interface} } |
-
 
 ##### Embed Builder Interface
 
 ```js
 interface EmbedBuilder {
-    content: string,
-    embed: {
-        title?: string,
-        description?: string,
-        color?: string | number,
-        timestamp?: any,
-        url?: string,
-        author?: {
-            name?: string,
-            url?: string,
-            icon_url?: string
-        },
-        thumbnail?: {
-            url?: string
-        },
-        image?: {
-            url?: string
-        },
-        footer?: {
-            text?: string,
-            icon_url?: string
-        },
-        fields?: [ EmbedBuilderField ],
-    }
+	content: string;
+	embed: {
+		title?: string,
+		description?: string,
+		color?: string | number,
+		timestamp?: any,
+		url?: string,
+		author?: {
+			name?: string,
+			url?: string,
+			icon_url?: string,
+		},
+		thumbnail?: {
+			url?: string,
+		},
+		image?: {
+			url?: string,
+		},
+		footer?: {
+			text?: string,
+			icon_url?: string,
+		},
+		fields?: [EmbedBuilderField],
+	};
 }
 
 interface EmbedBuilderField {
-    name?: string,
-    value?: string,
-    inline?: boolean
+	name?: string;
+	value?: string;
+	inline?: boolean;
 }
 ```
-
 
 ##### Simple Embed Builder Example
 
@@ -389,7 +317,6 @@ interface EmbedBuilderField {
 }
 ```
 
-
 #### Spacer
 
 Usage is kinda different for this one. You don't need to define getActualSet, etc. Just define an option as:
@@ -402,40 +329,12 @@ Usage is kinda different for this one. You don't need to define getActualSet, et
 }
 ```
 
-
-| Argument    | Type     |                                                           |
-|-------------|----------|-----------------------------------------------------------|
-| title       | String   | Title string for spacer. You can use HTML there.          |
-| description | String   | Description string for spacer. You can use HTML there.    |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Argument    | Type   |                                                        |
+| ----------- | ------ | ------------------------------------------------------ |
+| title       | String | Title string for spacer. You can use HTML there.       |
+| description | String | Description string for spacer. You can use HTML there. |
 
 <hr>
-
-
-
-
-
-
-
 
 #### Switch
 
@@ -443,9 +342,9 @@ Usage is kinda different for this one. You don't need to define getActualSet, et
 DBD.formTypes.switch(disabled),
 ```
 
-| Argument    | Type     |                                                            |
-|-------------|----------|------------------------------------------------------------|
-| disabled    | Boolean  | Boolean check for if the switch should be disabled or not. |
+| Argument | Type    |                                                            |
+| -------- | ------- | ---------------------------------------------------------- |
+| disabled | Boolean | Boolean check for if the switch should be disabled or not. |
 
 ##### Data required for `getActualSet` function
 
@@ -456,34 +355,18 @@ Boolean, to be turned on or not.
 Please note that `if(saved.state)` will return false if data is not set. If you want to default state to be true, use this:
 
 ```js
-getActualSet: ({guild,user}) => {
-    return (SAVED_STATE == null || SAVED_STATE == undefined) ? DEFAULT_STATE : SAVED_STATE;
-}
+getActualSet: ({ guild, user }) => {
+	return SAVED_STATE == null || SAVED_STATE == undefined
+		? DEFAULT_STATE
+		: SAVED_STATE;
+};
 ```
 
 ##### Data returned
 
 Boolean, true if turned on - false if turned off.
 
-
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Checkbox
 
@@ -491,9 +374,9 @@ Boolean, true if turned on - false if turned off.
 DBD.formTypes.checkbox(disabled),
 ```
 
-| Argument    | Type     |                                                              |
-|-------------|----------|--------------------------------------------------------------|
-| disabled    | Boolean  | Boolean check for if the checkbox should be disabled or not. |
+| Argument | Type    |                                                              |
+| -------- | ------- | ------------------------------------------------------------ |
+| disabled | Boolean | Boolean check for if the checkbox should be disabled or not. |
 
 ##### Data required for `getActualSet` function
 
@@ -504,40 +387,18 @@ Boolean, to be checked or not.
 Please note that `if(saved.state)` will return false if data is not set. If you want to default state to be true, use this:
 
 ```js
-getActualSet: ({guild,user}) => {
-    return (SAVED_STATE == null || SAVED_STATE == undefined) ? DEFAULT_STATE : SAVED_STATE;
-}
+getActualSet: ({ guild, user }) => {
+	return SAVED_STATE == null || SAVED_STATE == undefined
+		? DEFAULT_STATE
+		: SAVED_STATE;
+};
 ```
 
 ##### Data returned
 
 Boolean, true if ckecked - false if unchecked.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Channels Select
 
@@ -546,7 +407,7 @@ DBD.formTypes.channelsSelect(disabled, channelTypes = ['GUILD_TEXT']),
 ```
 
 | Argument     | Type    |                                                                          |
-|--------------|---------|--------------------------------------------------------------------------|
+| ------------ | ------- | ------------------------------------------------------------------------ |
 | disabled     | Boolean | Boolean check for if the channels select should be disabled or not.      |
 | channelTypes | Array   | An Array (!) of types of channels to be included in the channels select. |
 
@@ -558,24 +419,7 @@ String, channel ID.
 
 String, channel ID | or null.
 
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Channels Multi Select
 
@@ -584,7 +428,7 @@ DBD.formTypes.channelsMultiSelect(disabled, required, channelTypes = ['GUILD_TEX
 ```
 
 | Argument     | Type    |                                                                                   |
-|--------------|---------|-----------------------------------------------------------------------------------|
+| ------------ | ------- | --------------------------------------------------------------------------------- |
 | disabled     | Boolean | Boolean check for if the multiple channels select should be disabled or not.      |
 | required     | Boolean | Boolean check for if the multiple channels select should be required or not.      |
 | channelTypes | Array   | An Array (!) of types of channels to be included in the multiple channels select. |
@@ -597,29 +441,7 @@ Array of Strings (Channels IDs) | or an empty Array.
 
 Array of Strings (Channels IDs) | or an empty Array.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Roles Select
 
@@ -627,9 +449,10 @@ Array of Strings (Channels IDs) | or an empty Array.
 DBD.formTypes.rolesSelect(disabled),
 ```
 
-| Argument     | Type    |                                                                  |
-|--------------|---------|------------------------------------------------------------------|
-| disabled     | Boolean | Boolean check for if the roles select should be disabled or not. |
+| Argument    | Type    |                                                                  |
+| ----------- | ------- | ---------------------------------------------------------------- |
+| disabled    | Boolean | Boolean check for if the roles select should be disabled or not. |
+| includeBots | Boolean | Boolean to include bots roles in the list.                       |
 
 ##### Data required for `getActualSet` function
 
@@ -639,24 +462,7 @@ String, role ID.
 
 String, role ID | or null.
 
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Roles Multi Select
 
@@ -664,10 +470,11 @@ String, role ID | or null.
 DBD.formTypes.rolesMultiSelect(disabled, required),
 ```
 
-| Argument     | Type    |                                                                           |
-|--------------|---------|---------------------------------------------------------------------------|
-| disabled     | Boolean | Boolean check for if the multiple roles select should be disabled or not. |
-| required     | Boolean | Boolean check for if the multiple roles select should be required or not. |
+| Argument    | Type    |                                                                           |
+| ----------- | ------- | ------------------------------------------------------------------------- |
+| disabled    | Boolean | Boolean check for if the multiple roles select should be disabled or not. |
+| required    | Boolean | Boolean check for if the multiple roles select should be required or not. |
+| includeBots | Boolean | Boolean to include bots roles in the list.                                |
 
 ##### Data required for `getActualSet` function
 
@@ -676,21 +483,6 @@ Array of Strings (Roles IDs) | or an empty Array.
 ##### Data returned
 
 Array of Strings (Roles IDs) | or an empty Array.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### Create Custom Page Type
 
@@ -705,7 +497,6 @@ There are 3 types of Custom Pages: redirect to another page, custom HTML and JSO
 ```js
 DBD.customPagesTypes.redirectToUrl(endpoint: String, getDataFunction: Function<String>),
 ```
-
 
 #### Render HTMl
 
@@ -722,38 +513,41 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 #### Usage Example
 
 ```js
-    customPages: [
-        DBD.customPagesTypes.redirectToUrl('/redirect-to-foo', ({user}) => {
-            if(user.id)return `https://foo.com/?user=${user.id}`;
-            return "https://foo.com/?user=false";
-        }),
-        DBD.customPagesTypes.renderHtml('/html-render', ({user}) => {
-            return `
+customPages: [
+	DBD.customPagesTypes.redirectToUrl("/redirect-to-foo", ({ user }) => {
+		if (user.id) return `https://foo.com/?user=${user.id}`;
+		return "https://foo.com/?user=false";
+	}),
+	DBD.customPagesTypes.renderHtml("/html-render", ({ user }) => {
+		return `
             <!DOCTYPE html>
             <html>
                 <head>
                     <title>Test</title>
                 </head>
                 <body>
-                    <h1>${user.id ? `Hello, ${user.username}!` : `You are not logged in.`}</h1>
+                    <h1>${
+											user.id
+												? `Hello, ${user.username}!`
+												: `You are not logged in.`
+										}</h1>
                 </body>
             </html>
-            `
-        }),
-        DBD.customPagesTypes.sendJson('/json-test', ({user}) => {
-            return {
-                error: user.id ? false : true,
-                message: user.id ? null : "User not logged in.",
-                user: user
-            };
-        })
-    ]
+            `;
+	}),
+	DBD.customPagesTypes.sendJson("/json-test", ({ user }) => {
+		return {
+			error: user.id ? false : true,
+			message: user.id ? null : "User not logged in.",
+			user: user,
+		};
+	}),
+];
 ```
 
 ## Dashboard Class
 
 ?> **Dashboard class** works correctly only if you have previously used the async function for `DBD.useLicense('licenseId')` and you updated the **Dashboard class** with `DBD.UpdatedClasses()`. [Check Install step to how to do this properly.](https://dbd-docs.assistantscenter.com/#/?id=install)
-
 
 ### Config
 
@@ -761,12 +555,12 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 
 ```js
 ...
-    port: 80, 
+    port: 80,
 ...
 ```
 
 | Option | Type   |                                              |
-|--------|--------|----------------------------------------------|
+| ------ | ------ | -------------------------------------------- |
 | port   | Number | The port on which the Dashboard will listen. |
 
 #### Client (required)
@@ -781,10 +575,9 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 ```
 
 | Option | Type   |                            |
-|--------|--------|----------------------------|
+| ------ | ------ | -------------------------- |
 | id     | String | Discord Bot Client ID.     |
 | secret | String | Discord Bot Client Secret. |
-
 
 #### Redirect URI (required)
 
@@ -795,20 +588,19 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 ```
 
 | Option      | Type   |                                                                                                      |
-|-------------|--------|------------------------------------------------------------------------------------------------------|
+| ----------- | ------ | ---------------------------------------------------------------------------------------------------- |
 | redirectUri | String | Discord.js Bot OAuth2 defined Redirect Uri. For discord-dashboard it's `domain.com/discord/callback` |
-
 
 #### Domain (required)
 
 ```js
 ...
-    domain: 'domain.com', 
+    domain: 'domain.com',
 ...
 ```
 
 | Option | Type   |                                                                                                                                                                                                                                                               |
-|--------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | domain | String | Your domain with protocol (`http://domain.com` or `https://domain.com`) or localhost with http protocol (`http://localhost`). If you're using port different than `80` for `http` and `443` for `https`, then you need to add `:port` after domain/localhost. |
 
 #### Discord.js Bot Client (required)
@@ -820,7 +612,7 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 ```
 
 | Option | Type  |                                                                             |
-|--------|-------|-----------------------------------------------------------------------------|
+| ------ | ----- | --------------------------------------------------------------------------- |
 | bot    | Class | Discord.js Client Class. Need to be logged in with the token before define. |
 
 #### Theme Module (required)
@@ -832,7 +624,7 @@ DBD.customPagesTypes.sendJson(endpoint: String, getDataFunction: Function<Object
 ```
 
 | Option | Type                 |                                 |
-|--------|----------------------|---------------------------------|
+| ------ | -------------------- | ------------------------------- |
 | theme  | Object (ThemeModule) | Discord-Dashboard theme module. |
 
 Discord-Dashboard themes are listed in the <a href="#/?id=themes">Themes</a> section.
@@ -917,7 +709,7 @@ It must be an Array of `DISCORD_FLAGS.Permissions` that you want to require user
 `DISCORD_FLAGS.Permissions` is accesible from:
 
 ```js
-DBD.DISCORD_FLAGS.Permissions.PERMISSION_NAME
+DBD.DISCORD_FLAGS.Permissions.PERMISSION_NAME;
 ```
 
 Discord-Dashboard allows to use multiple permissions required:
@@ -929,47 +721,47 @@ requiredPermissions: [DBD.DISCORD_FLAGS.Permissions.MANAGE_GUILD, DBD.DISCORD_FL
 `PERMISSION_NAME`s available:
 
 ```js
-CREATE_INSTANT_INVITE
-KICK_MEMBERS
-BAN_MEMBERS
-ADMINISTRATOR
-MANAGE_CHANNELS
-MANAGE_GUILD
-ADD_REACTIONS
-VIEW_AUDIT_LOG
-PRIORITY_SPEAKER
-STREAM
-VIEW_CHANNEL
-SEND_MESSAGES
-SEND_TTS_MESSAGES
-MANAGE_MESSAGES
-EMBED_LINKS
-ATTACH_FILES
-READ_MESSAGE_HISTORY
-MENTION_EVERYONE
-USE_EXTERNAL_EMOJIS
-VIEW_GUILD_INSIGHTS
-CONNECT
-SPEAK
-MUTE_MEMBERS
-DEAFEN_MEMBERS
-MOVE_MEMBERS
-USE_VAD
-CHANGE_NICKNAME
-MANAGE_NICKNAMES
-MANAGE_ROLES
-MANAGE_WEBHOOKS
-MANAGE_EMOJIS_AND_STICKERS
-USE_APPLICATION_COMMANDS
-REQUEST_TO_SPEAK
-MANAGE_EVENTS
-MANAGE_THREADS
-CREATE_PUBLIC_THREADS
-CREATE_PRIVATE_THREADS
-USE_EXTERNAL_STICKERS
-SEND_MESSAGES_IN_THREADS
-START_EMBEDDED_ACTIVITIES
-MODERATE_MEMBERS
+CREATE_INSTANT_INVITE;
+KICK_MEMBERS;
+BAN_MEMBERS;
+ADMINISTRATOR;
+MANAGE_CHANNELS;
+MANAGE_GUILD;
+ADD_REACTIONS;
+VIEW_AUDIT_LOG;
+PRIORITY_SPEAKER;
+STREAM;
+VIEW_CHANNEL;
+SEND_MESSAGES;
+SEND_TTS_MESSAGES;
+MANAGE_MESSAGES;
+EMBED_LINKS;
+ATTACH_FILES;
+READ_MESSAGE_HISTORY;
+MENTION_EVERYONE;
+USE_EXTERNAL_EMOJIS;
+VIEW_GUILD_INSIGHTS;
+CONNECT;
+SPEAK;
+MUTE_MEMBERS;
+DEAFEN_MEMBERS;
+MOVE_MEMBERS;
+USE_VAD;
+CHANGE_NICKNAME;
+MANAGE_NICKNAMES;
+MANAGE_ROLES;
+MANAGE_WEBHOOKS;
+MANAGE_EMOJIS_AND_STICKERS;
+USE_APPLICATION_COMMANDS;
+REQUEST_TO_SPEAK;
+MANAGE_EVENTS;
+MANAGE_THREADS;
+CREATE_PUBLIC_THREADS;
+CREATE_PRIVATE_THREADS;
+USE_EXTERNAL_STICKERS;
+SEND_MESSAGES_IN_THREADS;
+START_EMBEDDED_ACTIVITIES;
+MODERATE_MEMBERS;
 ```
 
 Each permission is described on [Discord OAuth2 Documentation](https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags).
@@ -979,7 +771,6 @@ Each permission is described on [Discord OAuth2 Documentation](https://discord.c
 ```js
 requiredPermissions: [ DBD.DISCORD_FLAGS.Permissions.MANAGE_GUILD ],
 ```
-
 
 #### Rate Limits
 
@@ -1122,15 +913,15 @@ The Dashboard class allows you to listen for events in the Dashboard. For exampl
 
 ```js
 Dashboard.DBDEvents.on(EVENT_TYPE, (data) => {
-    //
+	//
 });
 ```
 
 #### User Logged In
 
 ```js
-Dashboard.DBDEvents.on('userLoggedIn', (data)=>{
-    //
+Dashboard.DBDEvents.on("userLoggedIn", (data) => {
+	//
 });
 ```
 
@@ -1139,8 +930,8 @@ Dashboard.DBDEvents.on('userLoggedIn', (data)=>{
 #### Website Viewed
 
 ```js
-Dashboard.DBDEvents.on('websiteView', (data)=>{
-    //
+Dashboard.DBDEvents.on("websiteView", (data) => {
+	//
 });
 ```
 
@@ -1149,15 +940,14 @@ Dashboard.DBDEvents.on('websiteView', (data)=>{
 #### Guild Settings Updated
 
 ```js
-Dashboard.DBDEvents.on('guildSettingsUpdated', (data)=>{
-    //
+Dashboard.DBDEvents.on("guildSettingsUpdated", (data) => {
+	//
 });
 ```
 
 - **Data returned**: `{user: <UserSessionObject>, changes: {<successedChanges>, <erroredChanges>}}`
 
 ## Under Maintenance Mode
-
 
 Use this mode if you don't want users to be able to access the Dashboard. A page informing about the technical break will be displayed. In order for you to be able to access the site despite blocking it, you must set:
 
@@ -1198,7 +988,7 @@ underMaintenanceAccessKey: 'totalsecretkey',
 ...
 ```
 
-###  Own maintenance page
+### Own maintenance page
 
 To set up your own page, you must set underMaintenanceCustomHtml instead of underMaintenance.
 
@@ -1247,18 +1037,18 @@ Please note that `discord-dashboard@<=2.3.19` uses `sessionSaveSession` instead 
 
 ```js
 module.exports = {
-    app: ({app,config,themeConfig}) => {
-        app.get('/moduleexample', (req,res)=>{
-            res.send('ModuleExample: Hello World!');
-        });
-    },
-    server: ({io,server,config,themeConfig}) => {
-        const test = io.of('/moduleexample');
-        test.on('connection', () => {
-            console.log('ModuleExample socket.io connected.');
-        });
-    }
-}
+	app: ({ app, config, themeConfig }) => {
+		app.get("/moduleexample", (req, res) => {
+			res.send("ModuleExample: Hello World!");
+		});
+	},
+	server: ({ io, server, config, themeConfig }) => {
+		const test = io.of("/moduleexample");
+		test.on("connection", () => {
+			console.log("ModuleExample socket.io connected.");
+		});
+	},
+};
 ```
 
 ## Themes
@@ -1280,7 +1070,6 @@ theme: <ThemeModule>,
 - [NPM](https://www.npmjs.com/package/dbd-capriham-theme), [GitHub](https://github.com/breftejk/dbd-capriham-theme)
 
 ![](https://cdn.assistantscenter.com/kqwivftx)
-
 
 ### Dark Dashboard
 
@@ -1306,9 +1095,9 @@ const SocketIO = Dashboard.io;
 ### Usage
 
 ```js
-    const test = SocketIO.of('/test');
-test.on('connection', () => {
-    console.log('ModuleExample socket.io connected.');
+const test = SocketIO.of("/test");
+test.on("connection", () => {
+	console.log("ModuleExample socket.io connected.");
 });
 ```
 
@@ -1342,12 +1131,11 @@ settings: [
 ```
 
 | Option              | Type   |                                                 |
-|---------------------|--------|-------------------------------------------------|
+| ------------------- | ------ | ----------------------------------------------- |
 | categoryId          | String | Category ID (must be lowercase and unique).     |
 | categoryName        | String | Category name. Can include HTML code.           |
 | categoryDescription | String | Category description. Can include HTML code.    |
 | categoryOptionsList | Array  | An Array of the `categoryOptionObject` Objects. |
-
 
 ### Category Option Object
 
@@ -1375,23 +1163,23 @@ settings: [
 
 - **Options:**
 
-| Option                  | Type                   |                                                                                                                                                             |
-|-------------------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| optionId                | String                 | Option ID (must be lowercase and unique).                                                                                                                   |
-| optionName              | String                 | Option name. Can include HTML code.                                                                                                                         |
-| optionDescription       | String                 | Option description. Can include HTML code.                                                                                                                  |
-| optionType              | Object (DBD Form Type) | DBD Option Type. Options Types listed in the <a href="#">Form Types</a> section.                                                                            |
-| getActualSet            | async Function         | The function for which you should return the currently set value for the option. The function passes you a `user` and a `guild` Objects.                    |
-| setNew                  | async Function         | A function that the Dashboard performs whenever a `user` user changes the settings of an option. It passes you the `user`, `guild`, and `newData` Objects.  |
-| allowedCheck (optional) | async Function         | A function that checks if option should be enabled to be changed by user on guild. It passes you the `user` and `guild` Objects.                            |
+| Option                  | Type                   |                                                                                                                                                            |
+| ----------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| optionId                | String                 | Option ID (must be lowercase and unique).                                                                                                                  |
+| optionName              | String                 | Option name. Can include HTML code.                                                                                                                        |
+| optionDescription       | String                 | Option description. Can include HTML code.                                                                                                                 |
+| optionType              | Object (DBD Form Type) | DBD Option Type. Options Types listed in the <a href="#">Form Types</a> section.                                                                           |
+| getActualSet            | async Function         | The function for which you should return the currently set value for the option. The function passes you a `user` and a `guild` Objects.                   |
+| setNew                  | async Function         | A function that the Dashboard performs whenever a `user` user changes the settings of an option. It passes you the `user`, `guild`, and `newData` Objects. |
+| allowedCheck (optional) | async Function         | A function that checks if option should be enabled to be changed by user on guild. It passes you the `user` and `guild` Objects.                           |
+
 - **Objects**:
 
-
-| Object  | Type                                                         |                                                                                          |
-|---------|--------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| guild   | Object: `{id: DiscordGuildID, object: <GuildObject>}`        | GUILD ID where the settings were updated (String).                                       |
-| user    | Object: `{id: DiscordUserID, object: <GuildMemberObject>}`   | User ID who has updated settings on GUILD (String).                                      |
-| newData | Depends on the type of the Form Type.                        | This is something that `user` has set as a wanted value for a new option on the `guild`. |
+| Object  | Type                                                       |                                                                                          |
+| ------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| guild   | Object: `{id: DiscordGuildID, object: <GuildObject>}`      | GUILD ID where the settings were updated (String).                                       |
+| user    | Object: `{id: DiscordUserID, object: <GuildMemberObject>}` | User ID who has updated settings on GUILD (String).                                      |
+| newData | Depends on the type of the Form Type.                      | This is something that `user` has set as a wanted value for a new option on the `guild`. |
 
 ### Errors Handling
 
