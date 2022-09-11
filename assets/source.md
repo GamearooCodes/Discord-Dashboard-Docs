@@ -598,38 +598,18 @@ Array of Strings (Channels IDs) | or an empty Array.
 Array of Strings (Channels IDs) | or an empty Array.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <hr>
-
-
-
-
-
-
-
 
 #### Roles Select
 
 ```js
-DBD.formTypes.rolesSelect(disabled),
+DBD.formTypes.rolesSelect(disabled, includeBots),
 ```
 
 | Argument     | Type    |                                                                  |
 |--------------|---------|------------------------------------------------------------------|
 | disabled     | Boolean | Boolean check for if the roles select should be disabled or not. |
+| includeBots     | Boolean | Boolean include bot roles.                                    |
 
 ##### Data required for `getActualSet` function
 
@@ -661,13 +641,14 @@ String, role ID | or null.
 #### Roles Multi Select
 
 ```js
-DBD.formTypes.rolesMultiSelect(disabled, required),
+DBD.formTypes.rolesMultiSelect(disabled, required, includeBots),
 ```
 
 | Argument     | Type    |                                                                           |
 |--------------|---------|---------------------------------------------------------------------------|
 | disabled     | Boolean | Boolean check for if the multiple roles select should be disabled or not. |
 | required     | Boolean | Boolean check for if the multiple roles select should be required or not. |
+| includeBots     | Boolean | Boolean include bot roles.                                             |
 
 ##### Data required for `getActualSet` function
 
