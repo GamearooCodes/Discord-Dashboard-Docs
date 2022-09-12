@@ -542,13 +542,15 @@ Boolean, true if ckecked - false if unchecked.
 #### Channels Select
 
 ```js
-DBD.formTypes.channelsSelect(disabled, channelTypes = ['GUILD_TEXT']),
+DBD.formTypes.channelsSelect(disabled, channelTypes = ['GUILD_TEXT'], hideNSW, onlyNSFW),
 ```
 
 | Argument     | Type    |                                                                          |
 |--------------|---------|--------------------------------------------------------------------------|
 | disabled     | Boolean | Boolean check for if the channels select should be disabled or not.      |
 | channelTypes | Array   | An Array (!) of types of channels to be included in the channels select. |
+| hideNSFW     | Boolean | Hide channels that are marked as nsfw                                    |
+| onlyNSFW     | Boolean | Only Show channels that are marked as nsfw                               |
 
 ##### Data required for `getActualSet` function
 
@@ -580,7 +582,7 @@ String, channel ID | or null.
 #### Channels Multi Select
 
 ```js
-DBD.formTypes.channelsMultiSelect(disabled, required, channelTypes = ['GUILD_TEXT']),
+DBD.formTypes.channelsMultiSelect(disabled, required, channelTypes = ['GUILD_TEXT'], hideNSW, onlyNSFW),
 ```
 
 | Argument     | Type    |                                                                                   |
@@ -588,6 +590,8 @@ DBD.formTypes.channelsMultiSelect(disabled, required, channelTypes = ['GUILD_TEX
 | disabled     | Boolean | Boolean check for if the multiple channels select should be disabled or not.      |
 | required     | Boolean | Boolean check for if the multiple channels select should be required or not.      |
 | channelTypes | Array   | An Array (!) of types of channels to be included in the multiple channels select. |
+| hideNSFW     | Boolean | Hide channels that are marked as nsfw                                             |
+| onlyNSFW     | Boolean | Only Show channels that are marked as nsfw                                        |
 
 ##### Data required for `getActualSet` function
 
